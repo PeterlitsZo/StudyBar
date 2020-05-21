@@ -24,9 +24,9 @@ To-Do List
 | [ ] MIT's vidio (this weekend)      | [ ] math homework                     |
 | [ ] Infomation retrieval's homework | [ ] english homework                  |
 | [ ] node.js                         |                                       |
-|                                     |                                       |
-|                                     |                                       |
-|                                     |                                       |
+| [ ] update my python filter!!       |                                       |
+|     (note)::                        |                                       |
+|     ::::::::                        |                                       |
 |                                     |                                       |
 |                                     |                                       |
 |                                     |                                       |
