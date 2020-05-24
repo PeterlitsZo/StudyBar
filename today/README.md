@@ -12,11 +12,9 @@ Today's Study Bar
 ``` text
 [W]  HH:MM  HHHHHHHHHHHHHHHHHHHHH  NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
 ---  -----  ---------------------  --------------------------------------------
-[=]  17:29  Math homework          ...
-...............................................................................
-
-[.]  23:47  Math homework          ...
-[.]   0:27  Math homework          ...
+[ ]  14:19  math homework          .
+[ ]  15:09  math homework          .
+[ ]  15:53  math homework          .
 ---  -----  ---------------------  --------------------------------------------
 ```
 
