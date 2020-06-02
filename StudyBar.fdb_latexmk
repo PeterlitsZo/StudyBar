@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1590984585 "StudyBar.xdv" "StudyBar.pdf" "StudyBar" 1590984585
-  "StudyBar.xdv" 1590984585 39080 040cd9a7efab7a9a7fb72f85cc860ae6 "xelatex"
+["xdvipdfmx"] 1591039795 "StudyBar.xdv" "StudyBar.pdf" "StudyBar" 1591039795
+  "StudyBar.xdv" 1591039795 67868 87c5114f08e4a7df67a041884cf1841a "xelatex"
   (generated)
   "StudyBar.pdf"
-["xelatex"] 1590984583 "StudyBar.tex" "StudyBar.xdv" "StudyBar" 1590984585
+["xelatex"] 1591039788 "StudyBar.tex" "StudyBar.xdv" "StudyBar" 1591039795
   "/dev/null" 1590918178 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1585021177 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -99,6 +99,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def" 1525381356 5737 725c9447fb897d9d4b3de57f2237385f ""
   "/usr/share/texlive/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-fandol.def" 1525381356 5003 398c229e903041ad7b03750426d3c0dd ""
   "/usr/share/texlive/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-article.def" 1525381356 4864 22d4244befd1f5887f815dbdcf0eb854 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/datenumber/datenumber.sty" 1480098826 8182 e5b59103685e95416e5bf89dbca52a21 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/datenumber/datenumberUSenglish.ldf" 1480098826 1524 1f613b9abd684f3f22c68f953e70be55 ""
   "/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty" 1549316214 51603 ccc7546d1e15809a779ade2c44d54044 ""
   "/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty" 1480098827 4378 f429f0da968c278653359293040a8f52 ""
   "/usr/share/texlive/texmf-dist/tex/latex/float/float.sty" 1480098828 6749 16d2656a1984957e674b149555f1ea1d ""
@@ -162,14 +164,14 @@
   "/usr/share/texmf/tex/latex/CJK/CJKfntef.sty" 1485503905 12851 a92a26031294f6fa88114f524b3b794a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1551493644 34566 ab5be96bde1a5acfd4f881dbe566b5fb ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1585021304 2548309 318a0193ec0482e58b83c08cf2dc9dd1 ""
-  "StudyBar.aux" 1590984585 1397 6f29d3b79cefd276adc2844990c4116b ""
-  "StudyBar.out" 1590984585 523 c26f7f8bd04a569f5b10f0c2101e0ba1 ""
-  "StudyBar.tex" 1590984583 1736 4854b2407efce15886a1ff020e6d6d12 ""
-  "StudyBar.toc" 1590984585 489 5a8c818bde2ad0731def741857e5052c ""
+  "StudyBar.aux" 1591039795 1966 5eaa7b4b699285bfdaf337ee3cf43b44 ""
+  "StudyBar.out" 1591039795 947 d7ce68ba2f7cb0cfa8a4b863ce787faa ""
+  "StudyBar.tex" 1591039779 5351 c25a03c718e2995addbd93ced3ba5c55 ""
+  "StudyBar.toc" 1591039795 858 6b7aed3d6a6884123e87f5d2e8e856c3 ""
   "peterlitsdoc.cls" 1590897952 15301 d9874524a4174630013148b4b1993ef1 ""
   (generated)
-  "StudyBar.toc"
   "StudyBar.aux"
   "StudyBar.out"
-  "StudyBar.log"
   "StudyBar.xdv"
+  "StudyBar.log"
+  "StudyBar.toc"
