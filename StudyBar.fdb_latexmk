@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1591039795 "StudyBar.xdv" "StudyBar.pdf" "StudyBar" 1591039795
-  "StudyBar.xdv" 1591039795 67868 87c5114f08e4a7df67a041884cf1841a "xelatex"
+["xdvipdfmx"] 1591087762 "StudyBar.xdv" "StudyBar.pdf" "StudyBar" 1591087763
+  "StudyBar.xdv" 1591087762 70852 97f43c11bd6a20996e809c83002e5ebd "xelatex"
   (generated)
   "StudyBar.pdf"
-["xelatex"] 1591039788 "StudyBar.tex" "StudyBar.xdv" "StudyBar" 1591039795
+["xelatex"] 1591087755 "StudyBar.tex" "StudyBar.xdv" "StudyBar" 1591087763
   "/dev/null" 1590918178 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1585021177 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -164,11 +164,11 @@
   "/usr/share/texmf/tex/latex/CJK/CJKfntef.sty" 1485503905 12851 a92a26031294f6fa88114f524b3b794a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1551493644 34566 ab5be96bde1a5acfd4f881dbe566b5fb ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1585021304 2548309 318a0193ec0482e58b83c08cf2dc9dd1 ""
-  "StudyBar.aux" 1591039795 1966 5eaa7b4b699285bfdaf337ee3cf43b44 ""
-  "StudyBar.out" 1591039795 947 d7ce68ba2f7cb0cfa8a4b863ce787faa ""
-  "StudyBar.tex" 1591039779 5351 c25a03c718e2995addbd93ced3ba5c55 ""
-  "StudyBar.toc" 1591039795 858 6b7aed3d6a6884123e87f5d2e8e856c3 ""
-  "peterlitsdoc.cls" 1590897952 15301 d9874524a4174630013148b4b1993ef1 ""
+  "StudyBar.aux" 1591087762 2084 6e9d803b4bb89184bdd1d5d9f0aee4ab ""
+  "StudyBar.out" 1591087762 1053 9f1e80bf86afb4108adacd92333d5b7b ""
+  "StudyBar.tex" 1591087755 2958 5f16a53b8e6835700d3c6d27c7eaf3c0 ""
+  "StudyBar.toc" 1591087762 936 7bd5d26e9a9e41afbd7d8525b42480b8 ""
+  "peterlitsdoc.cls" 1591067435 19589 9a2f23490c67a7874741b5114ebc6bc1 ""
   (generated)
   "StudyBar.aux"
   "StudyBar.out"

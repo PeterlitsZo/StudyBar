@@ -41,6 +41,7 @@
 \RequirePackage{float}              % for picture
 \RequirePackage{ifthen}             % for logic
 \RequirePackage{settobox}           % for box
+\RequirePackage{datenumber}         % for date calc
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,6 +67,140 @@
         \setlength{\fboxsep}{0.2em}
         \item [\fbox{\small #1}] {#2}
     \end{basedescript}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% plt time line
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% temp counter
+\newcounter{plt@date@temp}
+\newcounter{plt@date@temp@}
+
+% begin and end counter
+\newcounter{plt@date@begin}
+\newcounter{plt@date@end}
+
+% year, month and day counter
+\newcounter{plt@date@year}
+\newcounter{plt@date@month}
+\newcounter{plt@date@day}
+
+% length - the unit length and the temp length
+\newlength{\plt@date@unit}
+\newlength{\plt@date@tempLength}
+
+% turn the counter into yyyy counter, mm counter and dd counter
+\newcommand{\plt@date@toyyyymmdd}[1]{%
+    \setmydatebynumber{#1}{plt@date@year}{plt@date@month}{plt@date@day}%
+}
+
+% set the end
+\newcommand{\plt@date@setend}[3]{%
+    \setmydatenumber{plt@date@end}{#1}{#2}{#3}%
+}
+
+% set the begin
+\newcommand{\plt@date@setbegin}[3]{%
+    \setmydatenumber{plt@date@begin}{#1}{#2}{#3}%
+}
+
+% get the unitlength
+\newcommand{\plt@date@getunit}{%
+    \setlength{\plt@date@unit}
+        {0.8\textwidth/(\theplt@date@end-\theplt@date@begin)}%
+}
+
+\newcommand{\plt@date@item}[5][below]{{%
+    \setmydatenumber{plt@date@temp}{#2}{#3}{#4}%
+    \addtocounter{plt@date@temp}{-\theplt@date@begin}%
+    \ifnum\theplt@date@temp > -1%
+        \setlength{\fboxsep}{0.3\fboxsep}
+        \setlength{\plt@date@tempLength}{\plt@date@unit*\theplt@date@temp}%
+        \fill(\plt@date@tempLength,0) circle [radius=1pt];%
+        \node [#1] at (\the\plt@date@tempLength,0) {\parbox{%
+            \widthof{\scriptsize#2-#3-#4}%
+        }{%
+            \centering\scriptsize#2-#3-#4\par%
+            \fbox{\parbox[t]{\widthof{\scriptsize#2-#3-#4}-2\fboxsep}%
+                {\scriptsize#5}%
+            }%
+        }};
+    \fi%
+}}
+
+% the basic timeline
+\newenvironment{plttimelinebasic}[8]{%
+    \def\D{\plt@date@item}
+    \def\higher{4em}
+    \plt@date@setbegin{#1}{#2}{#3}%
+    \plt@date@setend{#4}{#5}{#6}%
+    \plt@date@getunit%
+    \begin{center}
+    \begin{tikzpicture}
+    \draw (0,0) -- (0.8\textwidth,0);
+    \D[above]{#1}{#2}{#3}{#7}
+    \D[above]{#4}{#5}{#6}{#8}
+}{%
+    \end{tikzpicture}
+    \end{center}
+    \def\D{\undefined}%
+    \def\higher{\undefined}%
+}
+
+\newenvironment{plttimeline}[3]{%
+    \begin{plttimelinebasic}
+        {\the\year}{\the\month}{\the\day}{#1}{#2}{#3}{NOW}{END}
+}{%
+    \end{plttimelinebasic}
+}
+
+\newcommand{\plt@date@four@item}[5][below]{%
+    \setmydatenumber{plt@date@temp@}{#2}{#3}{#4}
+    \plt@date@toyyyymmdd{\theplt@date@temp@}
+    \plt@date@item[#1]
+        {\theplt@date@year}{\theplt@date@month}{\theplt@date@day}{#5,B}
+
+    \addtocounter{plt@date@temp@}{1}
+    \plt@date@toyyyymmdd{\theplt@date@temp@}
+    \plt@date@item[#1]
+        {\theplt@date@year}{\theplt@date@month}{\theplt@date@day}{#5,1}
+
+    \addtocounter{plt@date@temp@}{1}
+    \plt@date@toyyyymmdd{\theplt@date@temp@}
+    \plt@date@item[#1]
+        {\theplt@date@year}{\theplt@date@month}{\theplt@date@day}{#5,2}
+
+    \addtocounter{plt@date@temp@}{2}
+    \plt@date@toyyyymmdd{\theplt@date@temp@}
+    \plt@date@item[#1]
+        {\theplt@date@year}{\theplt@date@month}{\theplt@date@day}{#5,3}
+
+    \addtocounter{plt@date@temp@}{6}
+    \plt@date@toyyyymmdd{\theplt@date@temp@}
+    \plt@date@item[#1]
+        {\theplt@date@year}{\theplt@date@month}{\theplt@date@day}{#5,4}
+}
+
+\newenvironment{pltstudylineenv}{%
+    \def\P{\plt@date@four@item}
+    \setmydatenumber{plt@date@temp}{\the\year}{\the\month}{\the\day}
+    \addtocounter{plt@date@temp}{11}
+    \plt@date@toyyyymmdd{\theplt@date@temp}
+    \begin{plttimelinebasic}
+        {\the\year}{\the\month}{\the\day}
+        {\theplt@date@year}{\theplt@date@month}{\theplt@date@day}
+        {NOW}{END}
+}{%
+    \end{plttimelinebasic}
+    \def\plt@data@four@item{\undefined}
+}
+
+\newcommand{\pltstudyline}[4]{%
+    \begin{pltstudylineenv}
+        \P{#1}{#2}{#3}{#4}
+    \end{pltstudylineenv}
 }
 
 
@@ -100,7 +235,7 @@
         \maxof{\the\plt@plan@third@height}{\the\plt@plan@forth@height}%
     }}%
     \parbox[b][\the\plt@plan@maxheight+5pt][t]{\textwidth}{%
-        \vspace*{3pt}%
+        \vspace*{5pt}%
         \parbox[b][\the\plt@plan@maxheight][t]{0.1\textwidth}{%
             \centering\underline{\texttt{#2}}}%
         \parbox[b][\the\plt@plan@maxheight][t]{0.2\textwidth}{%
@@ -109,7 +244,6 @@
             \centering\plttodo[#1]}%
         \parbox[b][\the\plt@plan@maxheight][t]{0.6\textwidth}{%
             #4}%
-        \vspace*{2pt}%
     }%
 }}%
 
@@ -311,7 +445,14 @@
         \parbox[b]{2.8ex}{
             \tikz[scale=0.9]{
                 \draw (0,0) rectangle (2ex,2ex);
-                \node at (1ex,1ex) {?};
+                \draw (1ex, 0.5ex) -- (1ex,0.75ex)
+                      .. controls (1ex,1ex) and (1.5ex,1ex) ..
+                          (1.5ex,1.2ex)
+                      .. controls (1.5ex,1.75ex) and (1.25ex,1.75ex) ..
+                          (1ex,1.75ex)
+                      .. controls (0.75ex,1.75ex) and (0.5ex,1.75ex) ..
+                          (0.5ex,1.2ex);
+                \fill (1ex,0.25ex) circle [radius=0.1ex];
             }
         }
     \fi\fi\fi

@@ -1,65 +1,5 @@
 \documentclass{peterlitsdoc}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{datenumber}
-
-\makeatletter
-
-\newcounter{plt@date@temp}
-\newcounter{plt@date@today}
-\setmydatenumber{plt@date@today}{\the\year}{\the\month}{\the\day}
-\newcounter{plt@date@end}
-\newlength{\plt@date@unit}
-\newlength{\plt@date@tempLength}
-
-\newcommand{\plt@date@daydiff}[3]{%
-    \setmydatenumber{plt@date@temp}{#1}{#2}{#3}%
-    \addtocounter{plt@date@temp}{-\theplt@date@today}%
-}
-
-\newcommand{\plt@date@setend}[3]{%
-    \setmydatenumber{plt@date@end}{#1}{#2}{#3}%
-    \plt@date@daydiff{#1}{#2}{#3}%
-    % assert that the end is bigger than today
-    \setlength{\plt@date@unit}{0.9\textwidth/\theplt@date@temp}
-}
-
-\newcommand{\pltdate}[5][below]{%
-    \plt@date@daydiff{#2}{#3}{#4}%
-    \ifnum\theplt@date@temp > -1%
-        \setlength{\plt@date@tempLength}{\plt@date@unit*\theplt@date@temp}%
-        \fill(\plt@date@tempLength,0) circle [radius=1pt];%
-        \node [#1] at (\the\plt@date@tempLength,0) {\parbox{%
-            \widthof{\footnotesize#2-#3-#4}%
-        }{%
-            \centering\footnotesize#2-#3-#4\par%
-            \fbox{\parbox[t]{\widthof{\footnotesize#2-#3-#4}-2\fboxsep}%
-                {\scriptsize#5}%
-            }%
-        }}
-    \fi%
-}
-
-\newenvironment{plttimeline}[3]{%
-    \def\D{\pltdate}
-    \plt@date@setend{#1}{#2}{#3}%
-    \begin{center}
-    \begin{tikzpicture}
-    \draw (0,0) -- (0.9\textwidth,0);
-    \pltdate[above]{\the\year}{\the\month}{\the\day}{NOW};
-    \pltdate[above]{#1}{#2}{#3}{END};
-}{%
-    \end{tikzpicture}
-    \end{center}
-    \def\D{\undefined}
-}
-
-\makeatother
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \title{时间记录}
 \author{Peterlits Zo}
 
@@ -84,40 +24,10 @@
     \D{2020}{7}{6}{高考};
 \end{plttimeline}
 
-\makeatletter
-\newcounter{Pmonth}
-\newcounter{Pday}
-\newcounter{Pyear}
-\newcounter{Pend}
-\setcounter{Pend}{\theplt@date@today+20}
-\setmydatebynumber{\thePend}{Pyear}{Pmonth}{Pday}
-
-\newcommand{\PD}[6][below]{
-    \setdate{#2}{#3}{#4}
-    \setcounter{datenumber}{\thedatenumber+1}
-    \setdatebynumber{\thedatenumber}
-    \D[#1]{\thedateyear}{\thedatemonth}{\thedateday}{#5};
-    \setcounter{datenumber}{\thedatenumber+1}
-    \setdatebynumber{\thedatenumber}
-    \D[below=#6, #1]{\thedateyear}{\thedatemonth}{\thedateday}{#5};
-    \setcounter{datenumber}{\thedatenumber+2}
-    \setdatebynumber{\thedatenumber}
-    \D[#1]{\thedateyear}{\thedatemonth}{\thedateday}{#5};
-    \setcounter{datenumber}{\thedatenumber+6}
-    \setdatebynumber{\thedatenumber}
-    \D[#1]{\thedateyear}{\thedatemonth}{\thedateday}{#5};
-}
-\makeatother
-
-\begin{comment}
-
 \subsection{2-3-5-11表}
 
-\begin{plttimeline}{\thePyear}{\thePmonth}{\thePday}
-    \PD{2020}{6}{2}{测试}{3em};
-\end{plttimeline}
-
-\end{comment}
+% \subsubsection{测试}
+% \pltstudyline{2020}{5}{31}{测试}
 
 \subsection{To-do表}
 
@@ -144,8 +54,10 @@
 \item[ ]{}{数学作业}{}
 \item[ ]{}{中医学视频}{}
 \item[ ]{}{水MIT视频}{}
-\item[ ]{}{跑步}{}
-\item[ ]{}{ACM改错}{}
+\item[v]{22:00}{跑步}{昨晚跑了一哈哈。}
+\item[v]{13:02}{ACM改错}{改了一道E题。很有意思，
+    说明了我们要抓住本质，正向的字符串就应该是
+    前开后闭，然后所有的值大于或者等于0}
 \end{pltplan}
 
 \subsection{正文}
