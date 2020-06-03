@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1591087762 "StudyBar.xdv" "StudyBar.pdf" "StudyBar" 1591087763
-  "StudyBar.xdv" 1591087762 70852 97f43c11bd6a20996e809c83002e5ebd "xelatex"
+["xdvipdfmx"] 1591204357 "StudyBar.xdv" "StudyBar.pdf" "StudyBar" 1591204357
+  "StudyBar.xdv" 1591204357 122828 4707616c3c9b13b5cd6477423c81e360 "xelatex"
   (generated)
   "StudyBar.pdf"
-["xelatex"] 1591087755 "StudyBar.tex" "StudyBar.xdv" "StudyBar" 1591087763
+["xelatex"] 1591204323 "StudyBar.tex" "StudyBar.xdv" "StudyBar" 1591204357
   "/dev/null" 1590918178 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1585021177 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -147,6 +147,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty" 1393459310 348 8927fde343487e003b01a4c2ca34073b ""
   "/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty" 1203727794 274 4cad6e665cc93ac2ac979039a94fa1e1 ""
   "/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty" 1203877327 325 2bcd023400636339210573e2b3ee298b ""
+  "/usr/share/texlive/texmf-dist/tex/latex/python/python.sty" 1480098838 3180 5c0929ca72dfe42f7b29d38a5498568f ""
   "/usr/share/texlive/texmf-dist/tex/latex/titlesec/frame.tss" 1480098841 2225 cf38bc0c40824c84f14e2d241d6efa30 ""
   "/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty" 1480098841 37387 afa86533e532701faf233f3f592c61e0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty" 1523050425 10212 357072c1d20578a30d6387d8a22e72ab ""
@@ -164,14 +165,16 @@
   "/usr/share/texmf/tex/latex/CJK/CJKfntef.sty" 1485503905 12851 a92a26031294f6fa88114f524b3b794a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1551493644 34566 ab5be96bde1a5acfd4f881dbe566b5fb ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1585021304 2548309 318a0193ec0482e58b83c08cf2dc9dd1 ""
-  "StudyBar.aux" 1591087762 2084 6e9d803b4bb89184bdd1d5d9f0aee4ab ""
-  "StudyBar.out" 1591087762 1053 9f1e80bf86afb4108adacd92333d5b7b ""
-  "StudyBar.tex" 1591087755 2958 5f16a53b8e6835700d3c6d27c7eaf3c0 ""
-  "StudyBar.toc" 1591087762 936 7bd5d26e9a9e41afbd7d8525b42480b8 ""
-  "peterlitsdoc.cls" 1591067435 19589 9a2f23490c67a7874741b5114ebc6bc1 ""
+  "StudyBar.aux" 1591204357 2881 05f772dcd3fcecacfb8091906dfe4a3f ""
+  "StudyBar.out" 1591204357 1633 4dcc04677cef4bd5e6c2d0c9510464cc ""
+  "StudyBar.tex" 1591204307 4902 2af4d8ad6031a67d96a159fa78258088 ""
+  "StudyBar.toc" 1591204357 1453 3b8de44324cdf3aec46a84fad17ca473 ""
+  "peterlitsdoc.cls" 1591104010 20923 4af54d89f9a54b1f917a32f54c2004fb ""
   (generated)
-  "StudyBar.aux"
-  "StudyBar.out"
   "StudyBar.xdv"
+  "StudyBar.py"
+  "latex.py"
   "StudyBar.log"
+  "StudyBar.out"
+  "StudyBar.aux"
   "StudyBar.toc"

@@ -267,6 +267,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/datenumber/datenumber.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/datenumber/datenumberUSenglish.ldf
 INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/frame.tss
 INPUT /usr/share/texlive/texmf-dist/tex/latex/titlesec/frame.tss
+INPUT /usr/share/texlive/texmf-dist/tex/latex/python/python.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/python/python.sty
 INPUT /usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 INPUT /usr/share/texlive/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 INPUT StudyBar.aux
