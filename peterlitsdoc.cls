@@ -70,6 +70,80 @@
     \end{basedescript}
 }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% plt new time line
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\luadirect{
+
+    % -------------------------------------------------------------------------
+    % -------------------------------------------------------------------------
+    % Cell is the cell of TimeLine, it can draw a cell in tikz
+
+    % new function
+
+    Cell = {index = 0, height = 0, text = 0}
+    function Cell:new(o, index, height, text)
+        o = o or {}
+        setmetatable(o, self)
+        self.__index = self
+
+        self.index = index          % the index on the TimeLine: [0, tbeg-tend]
+        self.height = height        % the height, can be calculated by calcHeight
+        self.text = text            % self s text in the box
+        
+        return o
+    end
+
+
+    % -------------------------------------------------------------------------
+    % -------------------------------------------------------------------------
+    % TimeLine is the main object of this environment, it can hold a great
+    % timeline if you like 
+
+    % new function
+
+    TimeLine = {tbeg = {}, tend = {}, unitLength = 0, cells = {},
+                cellLength = {}, cellFlag = {}}
+
+    function TimeLine:new(o, tbeg, tend, textlinewidth)
+        o = o or {}
+        setmetatable(o, self)
+        self.__index = self
+
+        self.tbeg = tbeg            % the time s begin
+        self.tend = tend            % the time s end
+        self.cellHigh = {}          % the cell High, record all high from
+                                    % 0 to tbeg - tend. for calcHeight
+        self.cells = {}             % remember all cells
+        self._sep = 2.5             % the white sep : 5pt
+        self._boxwidth = 53.5       % the box s width : 53.5 (\textwidth / 8)
+
+        local days = math.floor(
+            os.difftime(self.tbeg, self.tend) / (24 * 60 * 60)
+        )
+        self.unitlength = (textlinewidth - self._boxwidth - 2 * self.sep) / days
+                                    % unitLength, the Length for each cell
+        return o
+    end
+
+    % -------------------------------------------------------------------------
+    % calc height function: it will calculate the height of this cell
+
+    function TimeLine:calcHeight(date)
+    end
+
+    % -------------------------------------------------------------------------
+    % add cell function: it will add a cell on self
+
+    function TimeLine:addCell(date, text)
+        local index = os.difftime(date, self.tbeg) / (24 * 60 * 60)
+        local height = self.calcHeight(date, index, tex)
+        table.insert(self.cells, Cell:new(
+            nil, index, height, text
+        ))
+    end
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % plt time line
@@ -280,7 +354,7 @@
     \noindent%
         {\pltgray\rule{\textwidth}{0.4pt}}\vspace*{1.4ex}\par%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \def\othe{\noindent\color{white!60!black}\plt@plan@item}%
+    \def\othe{\noindent\color{white!70!black}\plt@plan@item}%
     \def\item{\noindent\pltblack\plt@plan@item}%
 }{%
     \vspace*{\dimexpr-\parskip-0.5\baselineskip}\noindent%
