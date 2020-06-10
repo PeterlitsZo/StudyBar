@@ -370,3 +370,5 @@ INPUT /home/peter/.texlive2018/texmf-var/luatex-cache/generic/fonts/otl/fandolfa
 INPUT /home/peter/.texlive2018/texmf-var/luatex-cache/generic/fonts/otl/lmmono10-regular.luc
 INPUT /home/peter/.texlive2018/texmf-var/luatexja/extra_fandolfang-regular.luc
 INPUT /home/peter/.texlive2018/texmf-var/luatexja/extra_fandolkai-regular.luc
+INPUT ./StudyBar.aux
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
